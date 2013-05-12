@@ -1,0 +1,97 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Google Visualization API Sample</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1', {packages: ['motionchart']});
+
+    function drawVisualization() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Area');
+      data.addColumn('date', 'Date');
+      data.addColumn('number', 'Sales Price');
+      data.addColumn('number', 'Total Number of Houses Sold');
+      data.addRows([
+        ["Parkside", new Date('01/07/2011'), 1060000,1],
+        ["Noe Valley", new Date('01/20/2011'), 1085000,2],
+        ["Mission Dolores", new Date("04/13/2011"), 525000,3],
+        ["Inner Mission", new Date("05/27/2011"), 525000,4],
+        ["Oakland", new Date("05/25/2011"), 430000,5],
+        ["San Mateo", new Date("06/03/2011"), 939000,6],
+        ["Noe Valley", new Date("06/17/2011"), 816000,7],
+        ["Lakeside", new Date("08/08/2011"), 753500,8],
+        ["Eureka Valley", new Date("08/12/2011"), 711000,9],
+        ["Eureka Valley", new Date("08/12/2011"), 640000, 10],
+        ["Inner Mission", new Date("08/12/2011"), 532500,11],
+        ["SOMA", new Date("08/19/2011"), 580000,12],
+        ["Bernal Heights", new Date("09/14/2011"), 775000,13],
+        ["Inner Mission", new Date("09/30/2011"), 575000,14],
+        ["Noe Valley", new Date("10/05/2011"), 813110,15],
+        ["Eureka Valley", new Date("10/12/2011"), 770000,16],
+        ["South of Market", new Date("10/28/2011"), 300000,17],
+        ["Sunnyside", new Date("11/23/2011"), 710000,18],
+        ["Bernal Heights", new Date("11/30/2011"), 705000,19],
+        ["Bernal Heights", new Date("12/06/2011"), 691500,20],
+        ["Mission Dolores", new Date("12/13/2011"), 605000,21],
+        ["Pacific Heights", new Date("02/17/2012"), 873000,23],
+        ["Bernal Heights", new Date("03/26/2012"), 925000,24],
+        ["Parkside", new Date("03/29/2012"), 760000,25],
+        ["Bernal Heights", new Date("04/18/2012"), 950000,26],
+        ["Central Richmond", new Date("05/04/2012"), 1270000,27],
+        ["Little Hollywood", new Date("06/22/2012"), 595000,28],
+        ["Hayes Valley", new Date("07/16/2012"), 1250000,29],
+        ["Cole Valley", new Date("08/02/2012"), 1450000,30],
+        ["Mission Dolores", new Date("08/22/2012"), 905000,31],
+        ["Bernal Heights", new Date("08/22/2012"), 781000,32],
+        ["Parkside", new Date("07/16/2012"), 710000,33],
+        ["Mission Dolores", new Date("08/22/2012"), 905000,34],
+        ["Bernal Heights", new Date("08/22/2012"), 781000,35],
+        ["Mission Dolores", new Date("09/05/2012"), 1050000,36],
+        ["Forest Knolls", new Date("10/04/2012"), 450000,37],
+        ["Downtown", new Date("11/20/2012"), 814000,38],
+        ["Inner Mission", new Date("11/14/2012"), 949000,39],
+        ["Inner Mission", new Date("11/28/2012"), 975000,40],
+        ["Twin Peaks", new Date("11/30/2012"), 449000,41],
+        ["Twin Peaks", new Date("12/01/2012"), 435000,42],
+        ["Twin Peaks", new Date("12/06/2012"), 429000,43],
+        ["Noe Valley", new Date("12/05/2012"), 1306000,44],
+        ["Inner Mission", new Date("12/13/2012"), 527000,45],
+        ["Inner Mission", new Date("12/14/2012"), 570000,46],
+        ["Inner Mission", new Date("12/13/2012"), 656000,47],
+        ["main street", new Date("10/19/2012"), 850000,48],
+        ["Twin Peaks", new Date("01/29/2013"), 440000,50],
+        ["Haight Ashbury", new Date("01/29/2013"), 710000,51],
+        ["Parkside", new Date("01/31/2013"), 780000,52],
+        ["Inner Sunset", new Date("02/14/2013"), 1025000,53],
+        ["Outer Richmond", new Date("02/22/2013"), 705000,54],
+        ["Bernal Heights", new Date("02/28/2013"), 812000,55],
+        ["Sunnyside", new Date("03/22/2013"), 890000,56],
+        ["Duboce Triangle", new Date("04/19/2013"), 915000,57]
+        
+      ]);
+ 
+ 
+
+     var motionchart = new google.visualization.MotionChart(
+          document.getElementById('visualization'));
+      var options = {};
+      options['width'] = 800;
+      options['height'] = 400;
+      options['state'] = '{"time":"2011-01-07","iconType":"BUBBLE","duration":{"timeUnit":"M"}}';
+       motionchart.draw(data, options);
+    }
+
+    google.setOnLoadCallback(drawVisualization);
+  </script>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+<div id="visualization" style="width: 800px; height: 400px;"></div>
+</body>
+</html>
